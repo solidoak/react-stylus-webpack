@@ -1,6 +1,5 @@
-import webpack from 'webpack'
-import webpackCommon from './webpack.common'
-
+const webpack = require('webpack')
+const webpackCommon = require('./webpack.common')
 const merge = require('webpack-merge')
 
 module.exports = () => {
@@ -23,15 +22,7 @@ module.exports = () => {
     devtool: 'eval',
 
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.LoaderOptionsPlugin({
-        test: /\.styl$/,
-        stylus: {
-          default: {
-            use: [ require('nib')() ]
-          }
-        }
-      })
+      new webpack.HotModuleReplacementPlugin()
     ]
   })
 }

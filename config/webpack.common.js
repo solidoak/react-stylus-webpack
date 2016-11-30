@@ -1,5 +1,6 @@
-import path from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const webpackCommon = {
   entry: {
@@ -16,6 +17,14 @@ const webpackCommon = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../index.html')
+    }),
+    new webpack.LoaderOptionsPlugin({
+      test: /\.styl$/,
+      stylus: {
+        default: {
+          use: [ require('nib')() ]
+        }
+      }
     })
   ],
 
@@ -34,4 +43,4 @@ const webpackCommon = {
   }
 }
 
-export default webpackCommon
+module.exports = webpackCommon
