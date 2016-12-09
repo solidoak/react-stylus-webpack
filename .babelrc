@@ -2,5 +2,12 @@
   "presets": [
     "latest",
     "react"
-  ]
+  ],
+  "env": {
+    "start": {
+      "presets": [
+        "react-hmre"
+      ]
+    }
+  }
 }
