@@ -1,7 +1,14 @@
 {
-    "extends": "standard",
-    "plugins": [
-        "standard",
-        "promise"
-    ]
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "plugins": [
+    "standard",
+    "promise",
+    "jasmine"
+  ],
+  "env": {
+    "jasmine": true
+  }
 }

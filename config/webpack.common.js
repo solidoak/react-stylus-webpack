@@ -36,7 +36,7 @@ const webpackCommon = {
     rules: [
       {
         test: /\.jsx?$/,
-        loaders: [ 'babel-loader' ],
+        loaders: [ 'babel-loader', 'eslint-loader' ],
         exclude: /node_modules/
       }
     ]

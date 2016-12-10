@@ -10,7 +10,7 @@ module.exports = () => {
           test: /\.styl$/,
           loader: ExtractTextPlugin.extract({
             fallbackLoader: 'style-loader',
-            loader: ['css-loader','stylus-loader']
+            loader: ['css-loader', 'stylus-loader']
           })
         }
       ]
