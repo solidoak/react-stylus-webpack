@@ -8,9 +8,9 @@
     "tdd": "karma start --auto-watch",
     "prebuild": "rimraf build",
     "build": "webpack --progress -p --config config/webpack.prod.js",
-    "start": "webpack-dev-server",
     "stats": "webpack --profile --progress --json > stats.json",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "dev": "webpack-dev-server --progress"
   },
   "author": "",
   "license": "ISC",

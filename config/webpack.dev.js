@@ -16,7 +16,7 @@ module.exports = () => {
     devServer: {
       historyApiFallback: true,
       hot: true,
-      stats: 'minimal'
+      stats: 'normal'
     },
 
     devtool: 'eval',

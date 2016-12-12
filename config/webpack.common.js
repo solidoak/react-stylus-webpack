@@ -4,13 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const webpackCommon = {
   entry: {
-    app: path.join(__dirname, '../app'),
-    vendor: path.join(__dirname, '../vendor.js'),
+    app: path.resolve(__dirname, '../app'),
+    vendor: ['react', 'react-dom'],
     styles: path.resolve(__dirname, '../app', 'main.styl')
   },
 
   output: {
-    filename: '[name].js',
+    filename: 'bundle.[name].js',
     path: path.join(__dirname, '../dist')
   },
 
@@ -25,6 +25,9 @@ const webpackCommon = {
           use: [ require('nib')() ]
         }
       }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
     })
   ],
 
