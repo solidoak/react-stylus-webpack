@@ -16,7 +16,7 @@ const webpackCommon = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../index.html')
+      template: path.join(__dirname, '../app', 'index.html')
     }),
     new webpack.LoaderOptionsPlugin({
       test: /\.styl$/,
@@ -40,7 +40,8 @@ const webpackCommon = {
       {
         test: /\.jsx?$/,
         loaders: [ 'babel-loader', 'eslint-loader' ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        include: path.resolve(__dirname, '../app')
       }
     ]
   }

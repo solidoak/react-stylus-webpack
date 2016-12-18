@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sun Dec 04 2016 18:22:49 GMT-0500 (EST)
+// Generated on Sun Dec 18 2016 08:33:03 GMT-0500 (EST)
 
 module.exports = function (config) {
   config.set({
@@ -9,27 +9,27 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: [ 'jasmine' ],
+    frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*Spec.js'
+      'app/**/*.spec.js'
     ],
 
     // list of files to exclude
-    exclude: [],
+    exclude: [
+    ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      // add webpack as preprocessor
-      'test/**/*Spec.js': [ 'babel' ]
+      'app/**/*.spec.js': ['webpack']
     },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: [ 'progress' ],
+    reporters: ['progress'],
 
     // web server port
     port: 9876,
@@ -46,7 +46,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: [ 'PhantomJS' ],
+    browsers: ['PhantomJS'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
@@ -56,6 +56,21 @@ module.exports = function (config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    webpack: require('./webpack.config.babel')
+    webpack: {
+      module: {
+        rules: [
+          {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+          }
+        ]
+      },
+      resolve: {
+        extensions: [
+          '.js', '.jsx'
+        ]
+      }
+    }
   })
 }

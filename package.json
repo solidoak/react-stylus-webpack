@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "tdd": "karma start --auto-watch",
+    "test:watch": "karma start --auto-watch",
     "prebuild": "rimraf build",
     "build": "webpack --progress -p --config config/webpack.prod.js",
     "stats": "webpack --profile --progress --json > stats.json",
@@ -41,6 +41,7 @@
     "karma-webpack": "^1.8.0",
     "nib": "^1.1.2",
     "phantomjs": "^2.1.7",
+    "react-addons-test-utils": "^15.4.1",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
