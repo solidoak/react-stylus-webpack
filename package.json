@@ -10,7 +10,8 @@
     "build": "webpack --progress -p --config config/webpack.prod.js",
     "stats": "webpack --profile --progress --json > stats.json",
     "lint": "eslint . --fix",
-    "dev": "webpack-dev-server --progress"
+    "dev": "webpack-dev-server --progress",
+    "coverage": "nyc --reporter=lcov --reporter=text --reporter=html --require babel-register --extension .jsx npm test"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-react-hmre": "^1.1.1",
+    "babel-register": "^6.18.0",
     "css-loader": "^0.26.0",
     "eslint": "^3.11.1",
     "eslint-config-standard": "^6.2.1",
@@ -40,13 +42,14 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-webpack": "^1.8.0",
     "nib": "^1.1.2",
+    "nyc": "^10.0.0",
     "phantomjs": "^2.1.7",
     "react-addons-test-utils": "^15.4.1",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.4.0",
-    "webpack": "^2.1.0-beta.27",
+    "webpack": "^2.2.1",
     "webpack-dev-server": "^2.1.0-beta.12",
     "webpack-merge": "^0.20.0"
   },

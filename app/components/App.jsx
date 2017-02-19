@@ -6,6 +6,10 @@ class App extends React.Component {
       <p>Ready...</p>
     )
   }
+
+  randomFunction () {
+    console.log('lol')
+  }
 }
 
 export default App
